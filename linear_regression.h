@@ -68,7 +68,7 @@ class LinearRegression {
 
     double mean_absolute_error(vector<double> &y_pred, vector<double> &y) {
         return (inner_product(y.begin(), y.end(), y_pred.begin(), 0.0, std::plus<>(), 
-                                        [=](double yi, double yhati) { return  (yi - yhati) * (yi - yhati); })) / (double) y_pred.size();
+                                        [=](double yi, double yhati) { return  abs(yi - yhati); })) / (double) y_pred.size();
     }
 
     double r_square(vector<double> &y_pred, vector<double> &y) {
